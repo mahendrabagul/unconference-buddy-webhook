@@ -1,0 +1,20 @@
+{
+  "name": "event_informer_webhook",
+  "version": "1.0.0",
+  "description": "This is the webhook which would handle all the api calls and responses.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Mahendra Bagul",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "request": "^2.85.0"
+  }
+}
