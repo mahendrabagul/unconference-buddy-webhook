@@ -15,16 +15,32 @@ const datafilename = 'data.json';
 const mongodburl = 'mongodb://localhost:27017';
 
 MongoClient.connect(mongodburl, (err, client) => {
-	if (err) return console.log(err);
+	if (err) throw err;
 	db = client.db(database); // whatever your database name is
-	db.collection(collectionname, {}, function (err, coll) {
-		if (err != null) {
-			db.createCollection(collectionname, function (err, result) {
+	db.collection(collectionname, {}, (err, coll) => {
+		if (err) throw err;
+		db.createCollection(collectionname, (err, result) => {
+			if (err) throw err;
+			console.log("collection created successfully...");
+			db.ensureIndex(collectionname, {
+				owner: "text",
+				abstract: "text"
+			}, (err, indexname) => {
+				if (err) throw err;
+				console.log("Index created successfully...");
 			});
-		}
-		db.ensureIndex(collectionname, {
-			document: "text"
-		}, function (err, indexname) {
+			fs.readFile(datafilename, 'utf8', (err, data) => {
+				db.collection(collectionname).drop((err, delOK) => {
+					if (err) throw err;
+					var jsondata = JSON.parse(data);
+					for (var i = 0; i < jsondata.length; i++) {
+						db.collection(collectionname).insert((jsondata[i]), (err, res) => {
+							if (err) throw err;
+						});
+					}
+				});
+			});
+			console.log("Successfully inserted records...");
 		});
 	});
 });
@@ -37,16 +53,17 @@ const server = app.listen(process.env.PORT || 5000, () => {
 });
 
 //Simple get call
-app.get('/', function (request, response) {
+app.get('/', (request, response) => {
 	res.send('Hello, This is UnConferenceBuddy DialogFlow WebHook')
 });
 
 app.get('/admin/load/data', (req, res) => {
-	fs.readFile(datafilename, 'utf8', function (err, data) {
-		db.collection(collectionname).drop(function (err, delOK) {
+	fs.readFile(datafilename, 'utf8', (err, data) => {
+		db.collection(collectionname).drop((err, delOK) => {
+			if (err) throw err;
 			var jsondata = JSON.parse(data);
 			for (var i = 0; i < jsondata.length; i++) {
-				db.collection(collectionname).insert((jsondata[i]), function (err, res) {
+				db.collection(collectionname).insert((jsondata[i]), (err, res) => {
 					if (err) throw err;
 				});
 			}
@@ -56,23 +73,19 @@ app.get('/admin/load/data', (req, res) => {
 	res.send("Record insertion is triggered...");
 });
 
-app.post("/search", function (req, res) {
-	console.log(req.body.query);
+app.post("/search", (req, res) => {
 	db.collection(collectionname).find({
 		"$text": {
-			"$search": req.body.query
+			"$search": req.query.searchTerm
 		}
-	},
-		{
-			textScore: {
-				$meta: collectionname
-			}
-		}).toArray(function (err, items) {
-			res.send(items);
-		})
+	}).toArray(function (err, result) {
+		if (err) throw err;
+		res.send(result);
+	})
 });
+
 // Triggered by a POST to /webhook 
-app.post('/webhook', function (req, res) {
+app.post('/webhook', (req, res) => {
 	var data = req.body;
 	// An action is a string used to identify what tasks needs to be done
 	// in fulfillment usually based on the corresponding intent.
@@ -81,33 +94,34 @@ app.post('/webhook', function (req, res) {
 	const parameters = data["result"]["parameters"]
 	console.log('result parameters: ' + JSON.stringify(parameters))
 	if (action != null) {
-		handleAction(action, req, res);
+		handleAction(action, req, res, parameters);
 	} else {
 		res.json({ "speech": "This is the default case from Webhook" });
 	}
 });
 
 //For handling actions
-function handleAction(action, req, res) {
+function handleAction(action, req, res, parameters) {
 	switch (action) {
 		case 'getInformationByLocation':
-			getInformationByLocation(res);
+			getInformationByLocation(req, res, parameters);
 			res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getInformationByLocation from Webhook" });
 			break;
 		case 'getWinnerByRank':
-			getWinnerByRank(res);
+			getWinnerByRank(req, res);
 			res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getWinnerByRank from Webhook" });
 			break;
 		case 'getInformationByTopic':
-			getInformationByTopic(res);
+			getInformationByTopic(req, res);
 			res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getInformationByTopic from Webhook" });
 			break;
 	}
 }
 
 //Business API Calls
-function getInformationByLocation(res) {
-	db.collection(collectionname).find().toArray(function (err, results) {
+function getInformationByLocation(req, res, parameters) {
+	console.log(parameters);
+	db.collection(collectionname).find({ location: location }).toArray((err, results) => {
 		console.log(results)
 		// send HTML file populated with quotes here
 	});
