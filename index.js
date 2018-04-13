@@ -1,7 +1,6 @@
 'use strict';
 // call the packages we need
-const express = require('express')
-var requestService = require('request');
+const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require("fs");
 const app = express();
@@ -46,8 +45,12 @@ MongoClient.connect(mongodburl, (err, client) => {
 });
 
 //app's config
-// app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
+const fs = require("fs")
+const app = express()	
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 const server = app.listen(process.env.PORT || 5000, () => {
 	console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
 });
@@ -84,7 +87,7 @@ app.post("/search", (req, res) => {
 	})
 });
 
-// Triggered by a POST to /webhook 
+// Triggered by a POST to /webhook
 app.post('/webhook', (req, res) => {
 	var data = req.body;
 	console.log('result parameters: ' + JSON.stringify(data))
