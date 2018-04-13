@@ -131,19 +131,23 @@ function getDifficultyLevel(level) {
 	}
 	return difficulty;
 }
+function initializeSpeech(results) {
+	var speech = "";
+	if (results.length > 1) {
+		speech = "Dear, There are " + results.length + " matching results found. "
+	}
+	else if (results.length == 1) {
+		speech = "Dear, There is 1 matching result found. "
+	}
+	else {
+		speech = "Dear, There is no matching result found. "
+	}
+	return speech;
+}
 //Business API Calls
 function getInformationByLocation(req, res, parameters) {
 	db.collection(collectionname).find({ location: parameters['Location'] }).toArray((err, results) => {
-		var speech = "";
-		if (results.length > 1) {
-			speech = "Dear, There are " + results.length + " matching results found. "
-		}
-		else if (results.length == 1) {
-			speech = "Dear, There is 1 matching result found. "
-		}
-		else {
-			speech = "Dear, There is no matching result found. "
-		}
+		var speech = initializeSpeech(results);
 		var count = 1;
 		results.forEach(element => {
 			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course. That will be presented by " + element.owner + " on " + element.dateAndTime + " ";
@@ -174,16 +178,7 @@ function getInformationByTopic(req, res, parameters) {
 			topicName: new RegExp(topic, 'i')
 		};
 	db.collection(collectionname).find(query).toArray((err, results) => {
-		var speech = "";
-		if (results.length > 1) {
-			speech = "Hi There, There are " + results.length + " matching results found. "
-		}
-		else if (results.length == 1) {
-			speech = "Hi There, There is 1 matching result found. "
-		}
-		else {
-			speech = "Hi There, There is no matching result found. "
-		}
+		var speech = initializeSpeech(results);
 		//var speech = "Hi There, There are " + results.length + " matching results. ";
 		var count = 1;
 		results.forEach(element => {
@@ -203,16 +198,7 @@ function getInformationByPartner(req, res, parameters) {
 			partner: new RegExp(partner, 'i')
 		};
 	db.collection(collectionname).find(query).toArray((err, results) => {
-		var speech = "";
-		if (results.length > 1) {
-			speech = "Dear, I have got " + results.length + " matching results. "
-		}
-		else if (results.length == 1) {
-			speech = "Dear, I have got 1 matching result. "
-		}
-		else {
-			speech = "Dear, I have got no matching result. "
-		}
+		var speech = initializeSpeech(results);
 		var count = 1;
 		results.forEach(element => {
 			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course being presented on " + element.dateAndTime + " and the brief about it is that " + element.abstract + " ";
@@ -231,16 +217,8 @@ function getInformationByOwner(req, res, parameters) {
 			owner: new RegExp(owner, 'i')
 		};
 	db.collection(collectionname).find(query).toArray((err, results) => {
-		var speech = "";
-		if (results.length > 1) {
-			speech = "Dear, I have got " + results.length + " matching results. "
-		}
-		else if (results.length == 1) {
-			speech = "Dear, I have got 1 matching result. "
-		}
-		else {
-			speech = "Dear, I have got no matching result. "
-		} var count = 1;
+		var speech = initializeSpeech(results);
+		var count = 1;
 		results.forEach(element => {
 			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course being presented on " + element.dateAndTime + " and the brief about it is that " + element.abstract + " ";
 		});
