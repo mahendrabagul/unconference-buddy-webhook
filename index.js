@@ -105,7 +105,7 @@ function handleAction(action, req, res, parameters) {
 	switch (action) {
 		case 'getInformationByLocation':
 			getInformationByLocation(req, res, parameters);
-			res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getInformationByLocation from Webhook" });
+			// res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getInformationByLocation from Webhook" });
 			break;
 		case 'getWinnerByRank':
 			getWinnerByRank(req, res);
@@ -120,9 +120,9 @@ function handleAction(action, req, res, parameters) {
 
 //Business API Calls
 function getInformationByLocation(req, res, parameters) {
-	console.log(parameters);
-	db.collection(collectionname).find({ location: location }).toArray((err, results) => {
-		console.log(results)
+	db.collection(collectionname).find({ parameters }).toArray((err, results) => {
+		console.log(results);
+		res.json({ "speech": "Hello, This is what I have." + results[0].abstract });
 		// send HTML file populated with quotes here
 	});
 	// var outputBody = {
