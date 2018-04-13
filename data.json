@@ -5,131 +5,132 @@
       "owner":"Anbazhagan Thangavelu, Dhananjay Sandiri, Manjusha, Shashank Rathore, Shilpa Chittara, Ravindra Bandaru",
       "abstract":"Comparizon between legacy VS platform devops.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":200
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":200,
+      "winner":3
    },
    {  
-   
       "topicName":"IoT Enabled Water Mgt. in Action with RasberryPi",
       "category":"IOT",
       "owner":"Saida Dhanavath, Sree Sowmya Upadhyayula",
       "abstract":"How IOT can help in realtime situations like water management. Working Demo with IBM IoT cloud platform RasberryPi Sensors Water containers.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":200
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":200,
+      "winner":""
    },
    {  
-  
       "topicName":"PCF - Build Fast, Ship Faster",
       "category":"PCF",
       "partner":"Dell",
       "owner":"Raghuveer Bhandarkar",
       "abstract":"What is PCF? Basic Introduction to PCF, High level Architecture of PCF. Quick Demo of pushing an app to PCF.",
       "location":"CR3",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":300
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":300,
+      "winner":2
    },
    {  
-    
       "topicName":"AWS Serverless Architecture",
       "category":"AWS",
       "owner":"Vinay Prashanth Durbhakula",
       "abstract":"Demonstrate next generation Amazon web services such as Build a server less website(using S3), Amazon polly, Lambda. Introduction to Amazon services to be used in this demo cover their use cases briefly.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":200
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":200,
+      "winner":4
    },
    {  
-   
       "topicName":"RPA and Telecom",
       "category":"RPA",
       "owner":"Ramu Nallamalli,Amitha Jaiswal",
       "abstract":"What is RPA?, RPA vs. Traditional Automation vs New RPA?. What problems does it solve in various domains? What is in for Telecom?. How can an Organization adopt RPA?",
       "location":"CR4",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":200
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":200,
+      "winner":""
    },
    {  
-     
       "topicName":"Chatbot - Contextual Personalization",
       "category":"AI",
       "owner":"Guest Speaker",
       "abstract":"Chatbots into business challenges and complexities and contextualization",
       "location":"CR3",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":5
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":5,
+      "winner":""
    },
    {  
-   
       "topicName":"Demystifying ML and AI",
       "category":"AI",
       "owner":"Guest Speaker",
       "abstract":"Machine Learning and AI with some deep learning, real time data case studies",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":6
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":6,
+      "winner":""
    },
    {  
-     
       "topicName":"Exploring Augmented Reality(AR)",
       "category":"AR",
       "owner":"Arafat Hussain Tauseef SHAIK",
-      "abstract":"Explaining 'Augmented Reality'. How it is different from 'Virtual Reality'?. Why it is the technology of the future?. How to build AR apps?",
+      "abstract":"Explaining Augmented Reality. How it is different from Virtual Reality?. Why it is the technology of the future?. How to build AR apps?",
       "location":"CR2",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":7
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":7,
+      "winner":""
    },
    {  
-
       "topicName":"Micro Services AWS & Monolith to Micro Services - Migration Strategy",
       "category":"AWS",
       "owner":"Sameer Vogeti",
       "abstract":"Monolithic Architecture vs Microservices Architecture, Separate your Frontend from your Backend, Introduction to an API Gateway, Characteristics of Microservices, AWS Support for Microservices, AWS components List for Microservices.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":8
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":8,
+      "winner":""
    },
    {  
-      
       "topicName":"Accelerated Delivery using a toolAccelerating Delivery : What happens when DATA + BOT + IOT come together",
       "category":"IOT",
       "owner":"Ari Tandabany",
       "abstract":"How DATA, BOT and IOT come together to accelerate your engineering velocity. A live case of how analytics, chatops and XFD works together and how you can get started in this journey.",
       "location":"CR2",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":9
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":9,
+      "winner":""
    },
    {  
-      
       "topicName":"IAM in Telecom",
       "category":"Security",
       "owner":"Gautham Shet",
       "abstract":"Need for Info Security in today’s world, What is IAM?. IAM in Telecom, Challenges for Telecom, Attack vectors for Telecom, Advantages of using IAM, and various demos",
       "location":"CR3",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":10
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":10,
+      "winner":""
    },
    {  
-    
       "topicName":"Blockchain - Usecases for Telecom",
       "category":"Blockchain",
       "partner":"Infosys",
       "owner":"RAMAKRISHNA_K",
-      "abstract":"Overview on block chain. Different available frameworks and their importance. Use case 'XYZ' using HyperLedger framework along with a demo.",
+      "abstract":"Overview on block chain. Different available frameworks and their importance. Use case XYZ using HyperLedger framework along with a demo.",
       "location":"CR2",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":11
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":11,
+      "winner":5
    },
    {  
-      
       "topicName":"Pivotal Ways of Working",
       "category":"Pivotal",
       "partner":"Cognizant",
       "owner":"Ramakrishnan Venkatasubramanian, KamalUdhavdas Tejnani",
       "abstract":"Roles in a Pivotal Team (Pivots, PCF anchors, POD managers, Embedded Product owner); POD team structure = 2 Pizza teams, with Pair Programming.",
       "location":"CR4",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":12
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":12,
+      "winner":""
    },
    {  
       "topicName":"AMP",
@@ -137,80 +138,82 @@
       "owner":"Narendra Kumar Kanukollu, Arjun Dandagi, Arafat Hussain Tauseef SHAIK",
       "abstract":"AMP – AWS Microservices Platform, Advantages of AMP, Multi Tenancy, Rancher Orchestrastion, PCF Tenancy in AMP, OKAPI2/SAAS, CI/CD Variants in AMP, Monitoring and Alerting, Logs Storage and Analysis, Infrastructure as code, Demo using Lambda",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":13
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":13,
+      "winner":""
    },
    {  
-     
       "topicName":"Application Security",
       "category":"Security",
       "owner":"Saiketan Soma, Bharath Kumar Dhanpal",
       "abstract":"It encompasses measures taken to improve the security of an application often by finding, fixing and preventing security vulnerabilities. To improve the security of web applications, an open and freely-accessible community called the Open Web Application Security Project (OWASP). There exist many automated tools that test for security flaws, often with a higher false positive rate than having a human involved.",
       "location":"CR2",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":14
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":14,
+      "winner":""
    },
    {  
-     
       "topicName":"Progressive Web Applications",
       "category":"PWA",
       "owner":"Yakkala Swamy ,Ananth Bommakanti",
       "abstract":"What are Progressive Web applications?, Why create a Progressive Web App?, PWA vs Native vs Responsive Web, Service Worker, App Shell archicture, Single Use case – Demo, Hello World PWA",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":16
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":16,
+      "winner":""
    },
    {  
-      
       "topicName":"AR/VR",
       "category":"AR",
       "partner":"Cognizant",
       "owner":"Ramakrishnan Venkatasubramanian, KamalUdhavdas Tejnani",
       "abstract":"Technologies which come under Extended Reality – AR, VR, MR, A brief discussion on the technologies, Changing ways of interaction using gestures, voice, eye-movements, haptics, etc.",
       "location":"CR4",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":17
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":17,
+      "winner":""
    },
    {  
-   
       "topicName":"Cryptography and Network Security",
       "category":"Security",
       "owner":"Ciby KOLLAKKARAN ALEX",
       "abstract":"What is Cryptography?, Overview, How it works?, Cryptography legacy, Modern Cryptography, Roles of cryptography over Network, Messaging technology, Security certificates and work flow, Protocols and Authentication, Subject relations to Telstra",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":18
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":18,
+      "winner":""
    },
    {  
       "topicName":"Micro Frontends (UX Trends)",
       "category":"UX",
       "owner":"Sudhakar Rajan Yerramsetti",
-      "abstract":"What's User Experience? It’s how we experience a Web page, service, an app, system how it is designed and every miniscule detail associated with it.",
+      "abstract":"What is User Experience? It is how we experience a Web page, service, an app, system how it is designed and every miniscule detail associated with it.",
       "location":"CR4",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":19
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":19,
+      "winner":""
    },
    {  
-      
       "topicName":"Docker and CICD",
       "category":"CICD",
       "partner":"Infosys",
       "owner":"Nagaraju Suragani, Avijit Pattanaik",
       "abstract":"What and Why Microservice Architecture?, Docker Architecture, Overview and Demo of a Sample Microservice Architecture, Setting up Docker for development, Docker registry within Infosys",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":2
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":2,
+      "winner":""
    },
    {  
-      
       "topicName":"Intro to Salesforce Platform and Developer Experience",
       "category":"Salesforce",
       "partner":"Salesforce",
       "owner":"Shashank Srivatsavaya",
       "abstract":"Understand the capabilities of the Salesforce platform, Building apps and customizations with Lightning Platform. Dev-Ops for Salesforce development with Salesforce DX",
       "location":"CR2",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":1
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":1,
+      "winner":""
    },
    {  
       "topicName":"High Performance instantly scalable Real Time monitoring system with (Live Demo)",
@@ -218,107 +221,108 @@
       "owner":"TIWARI, Anjali Brahm",
       "abstract":"Overview and Setting up of Docker Swarm. Creating simple micro-services using nodejs talking to nosql Dbs , elastic-search. Storing logs in Elastic search and stats in influxdb, etc",
       "location":"CR3",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":4
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":4,
+      "winner":""
    },
    {  
-     
       "topicName":"React JS Architecture & Best Practice",
       "category":"React JS",
       "owner":"Sumit Jolly",
       "abstract":"Why updating Real DOM is slow?, How Virtual DOM solves this problem?, How is How Virtual-DOM and diffing works in React?, Design patterns like SRP, Component lifecycle order.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":3
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":3,
+      "winner":""
    },
    {  
-     
       "topicName":"Designit",
       "category":"Designit",
       "owner":"Peyush Aggarwal, Pooja Agarwal",
       "abstract":"Design methodology and it impact/value, How Design thinking impacts the definition of a digital, How can engineers use and consume design deliverables, value of collaboration with design.",
       "location":"CR4",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":5
-   },	
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":5,
+      "winner":""
+   },
    {  
-    
       "topicName":"Google Dialog Flow (earlier api.ai)",
       "category":"AI",
       "owner":"Sagar Agrawal, Mahendra Bagul",
       "abstract":"There will be Google smart speaker at the event, Our Dialog Flow Conversation lets people know about the event and seminars/sub-events happening in event. Audience can get information about the seminars from these device (like participants/topic of seminars/abstract of a particular seminar if asked, hall for a particular seminar). Post to all the seminars, audience can ask for the winner of the events.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":7
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":7,
+      "winner":1
    },
    {  
-      
       "topicName":"Node JS",
       "category":"Node JS",
       "owner":"Shyam Sunder Kumar",
       "abstract":"Node.js is an open source, cross-platform built on Chrome’s JavaScript runtime for fast and scalable server-side and networking applications. Node.js can use multiple cores available on a host machine by firing up worker processes for CPU intensive tasks.",
       "location":"CR2",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":7
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":7,
+      "winner":""
    },
    {  
-     
       "topicName":"Agile",
       "category":"Agile",
       "partner":"Infosys",
       "owner":"Nag and Avijit",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":8
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":8,
+      "winner":""
    },
    {  
-   
       "topicName":"Telstra’s Virtual assistant",
       "category":"AI",
       "owner":"Zubair Aslam, Alekhya Kondam, Hemanatha REDDY MEDAM, Boris Posenjak",
       "abstract":"Intro to Virtual Assistant – Codi & the Feature team, Codi video, Business benefits of AI to Telstra, what technologies & platforms are used to build, deploy and operate Codi?",
       "location":"CR3",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":5
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":5,
+      "winner":""
    },
    {  
-      
       "topicName":"Network 20-20 - covering what Telstra’s vision is and the planning around network virtualization",
       "category":"VR",
       "owner":"Subhash Challa",
       "location":"CR4",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":4
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":4,
+      "winner":""
    },
    {  
-  
       "topicName":"Data modelling Advanced session on Mongo",
       "category":"NoSQL",
       "partner":"Infosys",
       "owner":"Rajib Deb",
       "abstract":"Overview of No SQL Databases and their Market. Few basics on No SQL Databases, Why MongoDB. How does it fit the Bill, Data Modelling on No SQL databases.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":3
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":3,
+      "winner":""
    },
    {  
-     
       "topicName":"Development Factory",
       "category":"Development Strategy",
       "owner":"Kartikey MISHRA, Akshay Kumar, Arpit Nagar",
       "abstract":"Pick a story from the JIRA board, Create a repository, Create an API usinng Architype (that generates Logging, API Documentation - OAS, abstract classes, HTTP methods), Create a Cucumber test cases using Architype, Code review process, Create a pipeline and run the CI/CD (build, run test cases, deploy), Create APIGEE Gateway.",
       "location":"CR4",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":7
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":7,
+      "winner":""
    },
    {  
-     
       "topicName":"AMP Security Standards and Architecture",
       "category":"AMP",
       "owner":"Himanshu Saxena",
       "abstract":"AMP network architecture, AMP security architecture and security features and standards, AMP Security policies and compliances, Security standards and best practices for deploying application on AMP, AMP support features and limitations.",
       "location":"CR1",
-      "dateAndTime":"Thu, 12 Apr 2018 09:34:58 GMT",
-      "level":8
+      "dateAndTime":"Thu, 12 Apr 2018 09:34 GMT",
+      "level":8,
+      "winner":""
    }
 ]

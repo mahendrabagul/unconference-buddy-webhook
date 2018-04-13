@@ -6,6 +6,7 @@ const fs = require("fs");
 const app = express();
 
 //database config
+var mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
 var db;
 const database = 'unconference-buddy';
@@ -86,13 +87,11 @@ app.post("/search", (req, res) => {
 // Triggered by a POST to /webhook
 app.post('/webhook', (req, res) => {
 	var data = req.body;
-	console.log('result parameters: ' + JSON.stringify(data))
 	// An action is a string used to identify what tasks needs to be done
 	// in fulfillment usually based on the corresponding intent.
 	var action = data["result"]["action"]
 	// Parameters are any entites that DialogFlow API has extracted from the request.
 	const parameters = data["result"]["parameters"]
-	console.log('result parameters: ' + JSON.stringify(parameters))
 	if (action != null) {
 		handleAction(action, req, res, parameters);
 	} else {
@@ -105,42 +104,60 @@ function handleAction(action, req, res, parameters) {
 	switch (action) {
 		case 'getInformationByLocation':
 			getInformationByLocation(req, res, parameters);
-			// res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getInformationByLocation from Webhook" });
 			break;
 		case 'getWinnerByRank':
-			getWinnerByRank(req, res);
-			res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getWinnerByRank from Webhook" });
+			getWinnerByRank(req, res, parameters);
 			break;
 		case 'getInformationByTopic':
-			getInformationByTopic(req, res);
-			res.json({ "speech": "Hello Mahendra, Welcome to Telstra UnConference. This is the sample getInformationByTopic from Webhook" });
+			getInformationByTopic(req, res, parameters);
 			break;
 	}
 }
 
 //Business API Calls
 function getInformationByLocation(req, res, parameters) {
-	db.collection(collectionname).find({ parameters }).toArray((err, results) => {
-		console.log(results);
-		res.json({ "speech": "Hello, This is what I have." + results[0].abstract });
-		// send HTML file populated with quotes here
+	db.collection(collectionname).find({ location: parameters['Location'] }).toArray((err, results) => {
+		var speech = "Dear, There are " + results.length + " matching results. ";
+		var count = 1;
+		results.forEach(element => {
+			speech += (count++) + ". The topic is " + element.topicName + " which will be presented by " + element.owner + " on " + element.dateAndTime + ".";
+		});
+		var outputBody = {
+			"speech": speech
+		}
+		res.json(outputBody);
 	});
-	// var outputBody = {
-	// 	"speech": data,
-	// 	"displayText": data,
-	// 	"data": {},
-	// 	"contextOut": [],
-	// 	"source": options.url + "_PowerShoppingWebhook"
-	// }
-	// res.json(outputBody);
 }
 
-function getWinnerByRank(req, res) {
-
+function getWinnerByRank(req, res, parameters) {
+	var speech = "";
+	db.collection(collectionname).findOne({ winner: parseInt(parameters['Winner']) }, function (err, result) {
+		if (err) throw err;
+		speech = "Dear, At rank " + result.winner + ", The topic is '" + result.topicName + "' which was presented by " + result.owner + ".";
+		var outputBody = {
+			"speech": speech
+		}
+		res.json(outputBody);
+	});
 }
 
-function getInformationByTopic(req, res) {
-
+function getInformationByTopic(req, res, parameters) {
+	var topic = parameters['Topic'];
+	var query =
+		{
+			topicName: new RegExp(topic, 'i')
+		};
+	db.collection(collectionname).find(query).toArray((err, results) => {
+		var speech = "Dear, There are " + results.length + " matching results. ";
+		var count = 1;
+		results.forEach(element => {
+			speech += (count++) + ". The topic is " + element.topicName + " which will be presented by " + element.owner + " on " + element.dateAndTime + " and the brief about it is " + element.abstract + ".";
+		});
+		var outputBody = {
+			"speech": speech
+		}
+		res.json(outputBody);
+	});
 }
 
 
