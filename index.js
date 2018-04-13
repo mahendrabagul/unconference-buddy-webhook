@@ -111,16 +111,42 @@ function handleAction(action, req, res, parameters) {
 		case 'getInformationByTopic':
 			getInformationByTopic(req, res, parameters);
 			break;
+		case 'getInformationByPartner':
+			getInformationByPartner(req, res, parameters);
+			break;
+		case 'getInformationByOwner':
+			getInformationByOwner(req, res, parameters);
+			break;
 	}
 }
-
+function getDifficultyLevel(level) {
+	var difficulty = "Beginner";
+	switch (level) {
+		case 200:
+			difficulty = "Intermediate";
+			break;
+		case 300:
+			difficulty = "Advanced";
+			break;
+	}
+	return difficulty;
+}
 //Business API Calls
 function getInformationByLocation(req, res, parameters) {
 	db.collection(collectionname).find({ location: parameters['Location'] }).toArray((err, results) => {
-		var speech = "Dear, There are " + results.length + " matching results. ";
+		var speech = "";
+		if (results.length > 1) {
+			speech = "Dear, There are " + results.length + " matching results found. "
+		}
+		else if (results.length == 1) {
+			speech = "Dear, There is 1 matching result found. "
+		}
+		else {
+			speech = "Dear, There is no matching result found. "
+		}
 		var count = 1;
 		results.forEach(element => {
-			speech += (count++) + ". The topic is " + element.topicName + " which will be presented by " + element.owner + " on " + element.dateAndTime + ".";
+			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course. That will be presented by " + element.owner + " on " + element.dateAndTime + " ";
 		});
 		var outputBody = {
 			"speech": speech
@@ -133,7 +159,7 @@ function getWinnerByRank(req, res, parameters) {
 	var speech = "";
 	db.collection(collectionname).findOne({ winner: parseInt(parameters['Winner']) }, function (err, result) {
 		if (err) throw err;
-		speech = "Dear, At rank " + result.winner + ", The topic is '" + result.topicName + "' which was presented by " + result.owner + ".";
+		speech = "Dear, At rank " + result.winner + ", The topic is '" + result.topicName + "' which was presented by " + result.owner;
 		var outputBody = {
 			"speech": speech
 		}
@@ -148,10 +174,75 @@ function getInformationByTopic(req, res, parameters) {
 			topicName: new RegExp(topic, 'i')
 		};
 	db.collection(collectionname).find(query).toArray((err, results) => {
-		var speech = "Dear, There are " + results.length + " matching results. ";
+		var speech = "";
+		if (results.length > 1) {
+			speech = "Hi There, There are " + results.length + " matching results found. "
+		}
+		else if (results.length == 1) {
+			speech = "Hi There, There is 1 matching result found. "
+		}
+		else {
+			speech = "Hi There, There is no matching result found. "
+		}
+		//var speech = "Hi There, There are " + results.length + " matching results. ";
 		var count = 1;
 		results.forEach(element => {
-			speech += (count++) + ". The topic is " + element.topicName + " which will be presented by " + element.owner + " on " + element.dateAndTime + " and the brief about it is " + element.abstract + ".";
+			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course. That will be presented by " + element.owner + " on " + element.dateAndTime + " and the brief about it is that " + element.abstract + " ";
+		});
+		var outputBody = {
+			"speech": speech
+		}
+		res.json(outputBody);
+	});
+}
+
+function getInformationByPartner(req, res, parameters) {
+	var partner = parameters['Partner'];
+	var query =
+		{
+			partner: new RegExp(partner, 'i')
+		};
+	db.collection(collectionname).find(query).toArray((err, results) => {
+		var speech = "";
+		if (results.length > 1) {
+			speech = "Dear, I have got " + results.length + " matching results. "
+		}
+		else if (results.length == 1) {
+			speech = "Dear, I have got 1 matching result. "
+		}
+		else {
+			speech = "Dear, I have got no matching result. "
+		}
+		var count = 1;
+		results.forEach(element => {
+			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course being presented on " + element.dateAndTime + " and the brief about it is that " + element.abstract + " ";
+		});
+		var outputBody = {
+			"speech": speech
+		}
+		res.json(outputBody);
+	});
+}
+
+function getInformationByOwner(req, res, parameters) {
+	var owner = parameters['Owner'];
+	var query =
+		{
+			owner: new RegExp(owner, 'i')
+		};
+	db.collection(collectionname).find(query).toArray((err, results) => {
+		var speech = "";
+		if (results.length > 1) {
+			speech = "Dear, I have got " + results.length + " matching results. "
+		}
+		else if (results.length == 1) {
+			speech = "Dear, I have got 1 matching result. "
+		}
+		else {
+			speech = "Dear, I have got no matching result. "
+		} var count = 1;
+		results.forEach(element => {
+			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course being presented on " + element.dateAndTime + " and the brief about it is that " + element.abstract + " ";
 		});
 		var outputBody = {
 			"speech": speech
