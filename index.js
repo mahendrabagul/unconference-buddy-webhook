@@ -46,10 +46,6 @@ MongoClient.connect(mongodburl, (err, client) => {
 
 //app's config
 app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
-const fs = require("fs")
-const app = express()	
-app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 const server = app.listen(process.env.PORT || 5000, () => {
 	console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
