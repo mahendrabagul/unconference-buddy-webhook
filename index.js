@@ -87,6 +87,7 @@ app.post("/search", (req, res) => {
 // Triggered by a POST to /webhook 
 app.post('/webhook', (req, res) => {
 	var data = req.body;
+	console.log('result parameters: ' + JSON.stringify(data))
 	// An action is a string used to identify what tasks needs to be done
 	// in fulfillment usually based on the corresponding intent.
 	var action = data["result"]["action"]
