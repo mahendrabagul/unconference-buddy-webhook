@@ -6,7 +6,6 @@ const fs = require("fs");
 const app = express();
 
 //database config
-var mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
 var db;
 const database = 'unconference-buddy';
@@ -179,7 +178,6 @@ function getInformationByTopic(req, res, parameters) {
 		};
 	db.collection(collectionname).find(query).toArray((err, results) => {
 		var speech = initializeSpeech(results);
-		//var speech = "Hi There, There are " + results.length + " matching results. ";
 		var count = 1;
 		results.forEach(element => {
 			speech += (count++) + ". The topic is " + element.topicName + " and it is a " + getDifficultyLevel(element.level) + " course. That will be presented by " + element.owner + " on " + element.dateAndTime + " and the brief about it is that " + element.abstract + " ";
